@@ -2,7 +2,7 @@ FROM debian:bookworm
 
 ENV PG_VERSION="1.16.1-1"
 
-RUN apt update && apt upgrade && apt install -y pgbouncer=$PG_VERSION
+RUN apt update && apt upgrade -y && apt install -y pgbouncer=$PG_VERSION
 
 COPY entrypoint.sh /entrypoint.sh
 # postgres user needs permission for /etc/pgbouncer so that the entrypoint script can write
