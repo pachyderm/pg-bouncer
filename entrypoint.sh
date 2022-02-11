@@ -58,11 +58,11 @@ if [ ! -f ${PG_CONFIG_DIR}/pgbouncer.ini ]; then
     listen_port = ${LISTEN_PORT:-5432}
     auth_file = ${AUTH_FILE:-$PG_CONFIG_DIR/userlist.txt}
     auth_type = ${AUTH_TYPE:-md5}
-    ${POOL_MODE:+pool_mode = ${POOL_MODE}\n}\
-    ${MAX_CLIENT_CONN:+max_client_conn = ${MAX_CLIENT_CONN}\n}\
-    ignore_startup_parameters = ${IGNORE_STARTUP_PARAMETERS:-extra_float_digits}
-    admin_users = ${ADMIN_USERS:-postgres}
-    ${IDLE_TRANSACTION_TIMEOUT:+idle_transaction_timeout = ${IDLE_TRANSACTION_TIMEOUT}\n}\
+    ${PGBOUNCER_POOL_MODE:+pool_mode = ${PGBOUNCER_POOL_MODE}\n}\
+    ${PGBOUNCER_MAX_CLIENT_CONN:+max_client_conn = ${PGBOUNCER_MAX_CLIENT_CONN}\n}\
+    ${PGBOUNCER_IGNORE_STARTUP_PARAMETERS:+ignore_startup_parameters = ${PGBOUNCER_IGNORE_STARTUP_PARAMETERS}\n}\
+    admin_users = ${POSTGRESQL_USERNAME:-postgres}
+    ${PGBOUNCER_IDLE_TRANSACTION_TIMEOUT:+idle_transaction_timeout = ${PGBOUNCER_IDLE_TRANSACTION_TIMEOUT}\n}\
 
     # TLS settings
     ${SERVER_TLS_SSLMODE:+server_tls_sslmode = ${SERVER_TLS_SSLMODE}\n}\
