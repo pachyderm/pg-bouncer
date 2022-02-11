@@ -11,7 +11,7 @@ print_validation_error() {
 # Here are some parameters. See all on
 # https://pgbouncer.github.io/config.html
 
-PG_CONFIG_DIR=/etc/pgbouncer
+PG_CONFIG_DIR=/tmp
 
 # Write the password with MD5 encryption, to avoid printing it during startup.
 # Notice that `docker inspect` will show unencrypted env variables.
