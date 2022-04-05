@@ -1,6 +1,6 @@
 FROM debian:bookworm
 
-ENV PG_VERSION="1.16.1-1"
+ENV PG_VERSION="1.17.0"
 
 RUN apt update && apt upgrade -y && apt install -y pgbouncer=$PG_VERSION
 
