@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 # Based on https://raw.githubusercontent.com/brainsam/pgbouncer/master/entrypoint.sh
 
 set -e
 
 print_validation_error() {
-    error "$1"
-    error_code=1
+    echo "$1"
+    exit 1
 }
 
 # Here are some parameters. See all on
@@ -34,9 +34,7 @@ fi
 if [[ -n "$PGBOUNCER_SERVER_TLS_KEY_FILE" ]] && [[ ! -f "$PGBOUNCER_SERVER_TLS_KEY_FILE" ]]; then
     print_validation_error "The server private key file in the specified path ${PGBOUNCER_SERVER_TLS_KEY_FILE} does not exist"
 fi
-if [[ -n "$PGBOUNCER_SERVER_TLS_CA_FILE" ]]; then
-    warn "A CA X.509 certificate was not provided. Server verification will not be performed in TLS connections"
-elif [[ ! -f "$PGBOUNCER_SERVER_TLS_CA_FILE" ]]; then
+if [[ -n "$PGBOUNCER_SERVER_TLS_CA_FILE" ]] && [[ ! -f "$PGBOUNCER_SERVER_TLS_CA_FILE" ]]; then
     print_validation_error "The server CA X.509 certificate file in the specified path ${PGBOUNCER_SERVER_TLS_CA_FILE} does not exist"
 fi
 
