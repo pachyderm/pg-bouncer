@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 # Based on https://raw.githubusercontent.com/brainsam/pgbouncer/master/entrypoint.sh
 
 set -e
 
 print_validation_error() {
-    error "$1"
-    error_code=1
+    echo "$1"
+    exit 1
 }
 
 # Here are some parameters. See all on
