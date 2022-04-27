@@ -63,7 +63,7 @@ if [ ! -f ${PG_CONFIG_DIR}/pgbouncer.ini ]; then
     ${PGBOUNCER_IDLE_TRANSACTION_TIMEOUT:+idle_transaction_timeout = ${PGBOUNCER_IDLE_TRANSACTION_TIMEOUT}\n}\
 
     # TLS settings
-    ${SERVER_TLS_SSLMODE:+server_tls_sslmode = ${SERVER_TLS_SSLMODE}\n}\
+    ${PGBOUNCER_SERVER_TLS_SSLMODE:+server_tls_sslmode = ${PGBOUNCER_SERVER_TLS_SSLMODE}\n}\
     ${PGBOUNCER_SERVER_TLS_CA_FILE:+server_tls_ca_file = ${PGBOUNCER_SERVER_TLS_CA_FILE}\n}\
     ${PGBOUNCER_SERVER_TLS_KEY_FILE:+server_tls_key_file = ${PGBOUNCER_SERVER_TLS_KEY_FILE}\n}\
     ${PGBOUNCER_SERVER_TLS_CERT_FILE:+server_tls_cert_file = ${PGBOUNCER_SERVER_TLS_CERT_FILE}\n}\
