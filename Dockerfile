@@ -29,6 +29,6 @@ COPY entrypoint.sh /entrypoint.sh
 # need to remove already included pgbouncer.ini for entrypoint to create new config file based
 # on the container environment variables
 
-USER postgres
+USER 1001
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/usr/bin/pgbouncer", "/tmp/pgbouncer.ini"]
