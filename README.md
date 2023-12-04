@@ -1,0 +1,1 @@
+> NOTICE: This Repo has been archived. Contents now live in the pahcyderm repo and are triggered from https://github.com/pachyderm/pachyderm/blob/c752916d971b241233a80b95c930629b92f676b5/.circleci/config.yml#L109C3-L109C3
